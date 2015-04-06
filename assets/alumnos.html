@@ -1,0 +1,95 @@
+<html>
+
+	<head>
+	    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css"
+        rel="stylesheet" type="text/css">
+        <link href="http://pingendo.github.io/pingendo-bootstrap/themes/default/bootstrap.css"
+        rel="stylesheet" type="text/css">
+
+		<script type="text/javascript">
+			$(document).ready(function(){
+			    bindAllDocReadyThings();
+			});
+			function agregar() {
+				window.open( "AgregarContacto.html", "myWindow", 
+				"status = 1, height = 300, width = 300, resizable = 0" )
+				}
+
+
+		    $(document).ready(function() {
+			    $.ajax({
+			        url: "/alumno"
+			    }).then(function(data) {
+			       
+			    	for(i in data){
+			    		$('#contenedorAlumnos').append(
+			    			'<div class="row">'+
+			                    '<div class="col-md-2">'+
+			                        '<img src="img/todosHUMI.png" class="center-block img-circle img-responsive"'+
+			                        'style="width:150px;height:auto">'+
+			                    	'</div><div class="col-md-4">'+
+			                        '<h1>'+data[i].nombre + ' '+ data[i].apellidos +'</h1>'+
+			                        '<h2>'+data[i].edad+' años</h2>'+
+			                        '<h2>'+data[i].notas+'</h2>'+
+			                        '<h2>Tutor: '+data[i].tutor+'</h2>'+
+			                    	'</div></div>');
+			    	}
+			    });
+			});
+
+      </script>
+
+
+	</head>
+
+	<body>
+			<nav class="navbar navbar-default">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+			    </div>
+			  </div>
+			</nav>
+
+			<div class="container">
+				<div class="jumbotron">
+				  <h1>Buenas tardes</h1>
+				  <p>Recuerda, a mayor exigencia, mas divertida la clase</p>
+				  	<form>	  	
+						<input type="button" onClick="agregar()" value="HUMI-add" class="navbar-text pull-right">
+					</form>	
+				</div>  	
+			</div>	  	
+				<div class="navbar navbar-inverse navbar-fixed-top">
+				   <div class="container">
+				      <p class="navbar-text pull-right">
+					      <a class="navbar-brand" href="/">
+					      	<img alt="HUMI" with="30" height="30" src="image/humiblanco.png">
+					      </a>
+					      <a class="navbar-brand" href="https://www.facebook.com/pages/HUMI/343999955723462">
+					      	<img alt="Facebook" with="30" height="30" src="image/facebook.png">
+					      </a>
+					       <a class="navbar-brand" href="https://instagram.com/humitkd/">
+					     	 <img alt="Instagram" with="30" height="30" src="image/Instagram.png">
+					      </a>   
+				      </p>				    
+				   </div>
+				</div>
+
+
+				<div class="section">
+		            <div class="container" id="contenedorAlumnos">
+		            
+		            </div>
+		        </div>
+	</body>
+</html>
+
+
+
+
+

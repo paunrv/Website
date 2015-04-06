@@ -1,0 +1,238 @@
+<html>
+   <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	      <style>
+            .header img {
+              float: right;
+              width: 470px;
+              height: 250px;
+            }  
+
+	      </style>
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+              $("#boton_envio").click(function (){
+                 
+                      var json = JSON.stringify(createJSON());
+                      $.ajax({
+                          type: 'POST',
+                          url: 'http://localhost:1337/alumno',
+                          data: json, // or JSON.stringify ({name: 'jonas'}),
+                          success: function(data) { alert('data: ' + data); },
+                          contentType: "application/json",
+                          dataType: 'json'
+                      });   
+                  });
+          });
+
+            function createJSON() {
+                item = {}
+                item ["nombre"] = $("#nombre").val();
+                item ["apellidos"] = $("#apellidos").val();
+                item ["tutor"] = $("#tutor").val();
+                item ["edad"] = $("#edad").val();
+                item ["fdn"] = $("#fdn").val();
+                item ["telefono"] = $("#telefono").val();
+                item ["mail"] = $("#mail").val();
+                item ["condicionMedica"] = $("#condicionMedica").val();
+                item ["notas"] = $("#notas").val();
+                item ["foto"] = $("#foto").val();
+
+                return item;
+          }
+              
+</script>
+   </head>
+	   		<body>
+           <div class="navbar navbar-inverse navbar-fixed-top">
+              <div class="container">
+                <p class="navbar-text pull-right">
+                  <a class="navbar-brand" href="/">
+                      <img alt="HUMI" with="30" height="30" src="img/humiblanco.png">
+                   </a>
+                   <a class="navbar-brand" href="https://www.facebook.com/pages/HUMI/343999955723462">
+                      <img alt="Facebook" with="30" height="30" src="img/facebook.png">
+                   </a>
+                   <a class="navbar-brand" href="https://instagram.com/humitkd/">
+                      <img alt="Instagram" with="30" height="30" src="img/Instagram.png">
+                   </a>   
+                 </p>            
+              </div>
+          </div>
+
+            <nav class="navbar navbar-default">
+              <div class="container-fluid">
+                <div class="navbar-header">
+                  <h2>HUMI Resgistro</h2>
+                </div>
+              </div>
+            </nav>
+
+          <div class="container">
+             <div class="jumbotron">
+                <div class="container-fluid">
+                	<table div id="infoContacto">	
+                     <p>Nombre</p><input id="nombre"type="TEXT" value="">
+                     <p></p>
+                      <p>Apellidos</p><input id="apellidos" type="TEXT" value"">
+                      <p></p>
+                      <p>Tutor</p><input id="tutor" type="TEXT" value""> <br/>  
+                      <p></p>  
+                      <p>Edad </p><input id="edad"type="TEXT" value""> 
+                      <p></p>
+                      <p>F.D.N</p> <select name="menu">
+                            <option>01</option>
+                            <option>02</option>
+                            <option>03</option>
+                            <option>04</option>
+                            <option>05</option>
+                            <option>06</option>
+                            <option>07</option>
+                            <option>08</option>
+                            <option>09</option>
+                            <option>10</option>
+                            <option>11</option>
+                            <option>12</option>
+                            <option>13</option>
+                            <option>14</option>
+                            <option>15</option>
+                            <option>16</option>
+                            <option>17</option>
+                            <option>18</option>
+                            <option>19</option>
+                            <option>20</option>
+                            <option>21</option>
+                            <option>22</option>
+                            <option>23</option>
+                            <option>24</option>
+                            <option>25</option>
+                            <option>26</option>
+                            <option>27</option>
+                            <option>28</option>
+                            <option>29</option>
+                            <option>30</option>
+                            <option>31</option>
+                            <option selected="selected">Dia</option>
+                          </select>
+                          <select name="menu">
+                            <option>ENERO</option>
+                            <option>FEBRERO</option>
+                            <option>MARZO</option>
+                            <option>ABRIL</option>
+                            <option>MAYO</option>
+                            <option>JUNIO</option>
+                            <option>JULIO</option>
+                            <option>AGOSTO</option>
+                            <option>SEPTIEMBRE</option>
+                            <option>OCTUBRE</option>
+                            <option>NOVIEMBRE</option>
+                            <option>DICIEMBRE</option>
+                            <option selected="selected">Mes</option>
+                          </select>
+                          <select name="menu">
+                            <option>2012</option>
+                            <option>2011</option>
+                            <option>2010</option>
+                            <option>2009</option>
+                            <option>2008</option>
+                            <option>2007</option>
+                            <option>2006</option>
+                            <option>2005</option>
+                            <option>2004</option>
+                            <option>2003</option>
+                            <option>2002</option>
+                            <option>2001</option>
+                            <option>2000</option>
+                            <option>1999</option>
+                            <option>1998</option>
+                            <option>1997</option>
+                            <option>1996</option>
+                            <option>1995</option>
+                            <option>1994</option>
+                            <option>1993</option>
+                            <option>1992</option>
+                            <option>1991</option>
+                            <option>1990</option>
+                            <option>1989</option>
+                            <option>1988</option>
+                            <option>1987</option>
+                            <option>1986</option>
+                            <option>1985</option>
+                            <option>1984</option>
+                            <option>1983</option>
+                            <option>1982</option>
+                            <option>1981</option>
+                            <option>1980</option>
+                            <option selected="selected">Año</option>
+                          </select></br>
+                          <p></p>
+                             <p>Telefono</p><input id="telefono" type="TEXT" value="">
+                             <p></p>
+                             <p>Mail</p><input id="mail" type="TEXT" value"">
+                             <p></p>
+                             <p>Direccion</p><input id="direccion" type="TEXT" value""> <br/> 
+                             <p></p>
+                             <p>Condicion medica</p><br/>
+                            <textarea  id="condicionMedica"name="empant" cols=45 rows=6></textarea> <br/>
+                            <p></p>
+                            <p>Notas</p>    <br/>
+                            <textarea id="notas"name="empant" cols=45 rows=6></textarea> <br/>
+                	</table>
+                          <button id="boton_envio">Guardar</button>
+                 </div> 
+             </div>     
+          </div>
+	       </body>
+</html>
+
+
+
+<!---?php
+$Nombre = $_POST['nombre'];
+$Apellidos = $_POST['apellidos'];
+$Tutor = $_POST['tutor'];
+$Edad = $_POST['edad'];
+$FDN = $_POST['fdn'];
+$Telefono = $_POST['telefono'];
+$Mail = $_POST['mail'];
+$condicionMedica = $_POST['condicionMedica'];
+$notas = $_POST['notas'];
+
+$dest = "humi.tkd@gmil.com"; 
+ //spam?
+$headers = "From: $nombre <$email>\r\n";  
+$headers .= "X-Mailer: PHP5\n";
+$headers .= 'MIME-Version: 1.0' . "\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+$asunto = "Contacto";
+$cuerpo = "Nombre: ".$nombre."<br>";
+$cuerpo = "Apellidos: ".$apellidos."<br>";
+$cuerpo .= "Tutor: ".$tutor."<br>";
+$cuerpo .= "Edad: ".$edad."<br>";
+$cuerpo .= "FDN: ".$fdn;
+$cuerpo = "Telefono: ".$telefono."<br>";
+$cuerpo .= "Mail: ".$mail."<br>";
+$cuerpo .= "condicionMedica: ".$condicionMedica."<br>";
+$cuerpo .= "Notas: ".$notas. "<br>";
+ 
+if($Nombre != '' && $Apellidos != ''&& $Tutor != '' $Edad != '' &&  $FDN != '' && $Telefono != '' && $Mail != '' &&  $condicionMedica != ''  && $Notas != ''){
+    mail($dest,$asunto,$cuerpo,$headers); //ENVIAR!
+}
+?>
+
+//

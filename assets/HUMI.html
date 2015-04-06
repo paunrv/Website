@@ -1,0 +1,175 @@
+<html>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<script href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+  <head>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.1.0/css/bootstrap-combined.min.css" rel="stylesheet" />
+    <style>
+
+.section {
+  clear: both;
+  padding: 0px;
+  margin: 0px;
+}
+
+
+.col {
+  display: block;
+  float:left;
+  margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /
+.span_2_of_2 {
+  width: 100%;
+}
+.span_1_of_2 {
+  width: 49.2%;
+}
+
+
+
+@media only screen and (max-width: 480px) {
+  .col { 
+    margin: 1% 0 1% 0%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .span_2_of_2, .span_1_of_2 { width: 100%; }
+}
+
+  </style>
+
+  </head>
+
+  <body>
+      <div class="conteiner">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="navbar-header">
+            </div>
+          </div>
+        </nav>
+      </div>  
+
+
+      <div class="container">
+        <div class="jumbotron">
+          <div class="col-lg-9 col-md-9 col-xs-12"><h1>Bienvenido, disfruta tu clase!</h1>
+            <p>Calle Niza #396 Ampliacion moderna, 22879 Ensenada B.C. Mx.</p>
+          </div>
+
+          <div class="row">
+            <div class="calendario"></div>
+          </div>  
+
+          <script language="javascript" type="text/javascript">
+            var day_of_week = new Array('D','L','M','M','J','V','S');
+            var month_of_year = new Array('Enero','Febrero','Marzo','Abril','Mayo','junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre');
+
+            var Calendar = new Date();
+
+            var year = Calendar.getFullYear();     
+            var month = Calendar.getMonth();    
+            var today = Calendar.getDate();    
+            var weekday = Calendar.getDay();   
+            var DAYS_OF_WEEK = 7;    
+            var DAYS_OF_MONTH = 31;    
+            var cal;    
+            
+            Calendar.setDate(1);    
+            Calendar.setMonth(month);    
+            
+            var TR_start = '<TR>';
+            var TR_end = '</TR>';
+            var highlight_start = '<TD WIDTH="30"><TABLE CELLSPACING=3 BORDER=3><TR><TD WIDTH=50><B><CENTER>';
+            var highlight_end   = '</CENTER></TD></TR></TABLE></B>';
+            var TD_start = '<TD WIDTH="50"><CENTER>';
+            var TD_end = '</CENTER></TD>';
+            cal =  '<TABLE BORDER=0 CELLSPACING=4 CELLPADDING=4 BGCOLOR="pink" BORDERCOLOR="pink" ><TR><TD>';
+            cal += '<TABLE BORDER=0 CELLSPACING=0 CELLPADDING=2>' + TR_start;
+            cal += '<TD COLSPAN="' + DAYS_OF_WEEK + '" BGCOLOR="white"><CENTER><B>';
+            cal += month_of_year[month]  + '   ' + year + '</B>' + TD_end + TR_end;
+            cal += TR_start;
+
+            for(index=0; index < DAYS_OF_WEEK; index++)
+              {
+                if(weekday == index)
+                cal += TD_start + '<B>' + day_of_week[index] + '</B>' + TD_end;
+
+                else
+                cal += TD_start + day_of_week[index] + TD_end;
+              }
+                cal += TD_end + TR_end;
+                cal += TR_start;
+
+                for(index=0; index < Calendar.getDay(); index++)
+                cal += TD_start + '  ' + TD_end;
+                for(index=0; index < DAYS_OF_MONTH; index++)
+                {
+                  if( Calendar.getDate() > index )
+                  {
+                    week_day =Calendar.getDay();
+                      if(week_day == 0)
+                      cal += TR_start;
+                      if(week_day != DAYS_OF_WEEK)
+                      {
+
+                      var day  = Calendar.getDate();
+
+                        if( today==Calendar.getDate() )
+                        cal += highlight_start + day + highlight_end + TD_end;
+                        else
+                        cal += TD_start + day + TD_end;
+                      }
+                      if(week_day == DAYS_OF_WEEK)
+                      cal += TR_end;
+                    }
+
+                    Calendar.setDate(Calendar.getDate()+1);
+
+                }
+
+                cal += '</TD></TR></TABLE></TABLE>';
+                document.write(cal);
+            </script>
+        </div>
+      </div>
+
+              
+            <div class="container">
+            <div class="jumbotron"> 
+                <p onClick="agregar()"></p>
+                <p><button type="button" class="img-circle" ><img src="image/pau.png" with="100" height="100"></button></p>
+                <p><button type="button" class="img-circle" ><img src="image/pau.png" with="100" height="100"></button></p>
+                <p><button type="button" class="img-circle" ><img src="image/pau.png" with="100" height="100"></button></p>
+             </div>
+          </div> 
+
+          <div class="navbar navbar-inverse navbar-fixed-top">
+           <div class="container">
+              <p class="navbar-text pull-right">
+                  <a class="navbar-brand" href="HUMI.html">
+                    <img alt="HUMI" with="30" height="30" src="image/HUMI.png">
+                  </a>
+                  <a class="navbar-brand" href="https://www.facebook.com/pages/HUMI/343999955723462">
+                    <img alt="Facebook" with="30" height="30" src="image/facebook.png">
+                  </a>
+                   <a class="navbar-brand" href="https://instagram.com/humitkd/">
+                   <img alt="Instagram" with="30" height="30" src="image/Instagram.png">
+                 </a>   
+              </p>            
+           </div>
+        </div>
+  </body>
+</html>
+
+
+
