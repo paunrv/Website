@@ -8,7 +8,37 @@
 module.exports = {
 
   attributes: {
-
+  	nombre:{
+  		type:'string',
+  		required:true
+  	},
+  	apellido:{
+  		type:'string',
+  		required:true
+  	},
+  	tutor:{
+  		type:'string',
+  		required:true
+  	},
+  	foto:{
+  		type:'string',
+  		required:false
+  	},
+  	fechaNacim:{
+  		type:'date',
+  		required:true
+  	},
+  	foto:{
+  		type:'string',
+  		required:true
+  	},
+  	condicionMedica:{
+  		type:'string',
+  		required:true
+  	},
+  	grado:{
+  		type:'string',
+  		required:true
+  	}
   }
 };
-
