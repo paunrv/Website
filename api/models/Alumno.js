@@ -6,8 +6,12 @@
 */
 
 module.exports = {
-
   attributes: {
+    matricula:{
+      type:'string',
+      required:true,
+      unique:true
+    },
   	nombre:{
   		type:'string',
   		required:true
