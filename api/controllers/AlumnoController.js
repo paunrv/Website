@@ -6,6 +6,12 @@
  */
 
 module.exports = {
-	
+	getAlumnos: function (req, res) {
+    	Alumno.find().done(function(err,alumnos){
+		  res.view({
+		    alumnos:alumnos
+		  });
+		});
+  }
 };
 
